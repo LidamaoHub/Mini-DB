@@ -1,6 +1,6 @@
 ####关于MiniDB
 ----
-<center>![logo](http://7u2nd7.com1.z0.glb.clouddn.com/minidbmini.png)</center>
+<center>![logo](http://7u2nd7.com1.z0.glb.clouddn.com/logo.png)</center>
 
 ######MiniDB是我第一个开源项目,作为我学习javascript的一个小习作
 
