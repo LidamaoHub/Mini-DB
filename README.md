@@ -6,7 +6,7 @@ MiniDB是一个基于html5新特性**localStorage**的**本地**微型非关系�
 
 古人说"杀鸡焉用牛刀",希望MiniDB能做好一把锋利的杀鸡小刀~
 
-文档请看[GitHub](https://github.com/david500834/Mini-DB/wiki)
+文档请看[文档](https://github.com/david500834/Mini-DB/wiki)
 ###作者怎么看MiniDB
 ----
 作者李大猫JS功力十分浅,还望大神轻拍.MiniDB是李大猫做的第一个比较大型的Demo,文档和功能参考了Leancloud.希望大家能喜欢并多多指教
