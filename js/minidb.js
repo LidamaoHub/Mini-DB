@@ -2,7 +2,7 @@
  * @Author: leeperfect
  * @Date:   2016-02-22 10:45:25
  * @Last Modified by:   leeperfect
- * @Last Modified time: 2016-02-24 17:30:19
+ * @Last Modified time: 2016-02-25 10:45:10
  */
 
 //TODO_LIST
@@ -53,7 +53,34 @@ function Set_db(db_name) {
 
 function Query_db(db_name) {
 
-    
+    //================ query function =============================
+    //查询的方式,该选项只能使用如下方法中一种,用于规定查询的逻辑
+    //equal_to/not_equal_to 
+    //=> 传入特定值,查询目标字段的值是否等于特定值
+    //contained_in/not_contained_in
+    //=> 传入list,并查询目标字段的值是否在list中
+    //less_than/not_less_than/greater_than/not_greater_than 
+    //=> 传入特定值,查询目标字段值是否满足比较大小的逻辑
+
+    //TODO 如果方法重了怎么办?或者可以实现多个条件一起查询呢?数据结构不一样怎么办呢?
+    //方法执行排序,先让能大量减少数据量的方法执行
+
+    //================  query option ==============================
+    //查询的选项,该选项可以复用,主要用来控制查询结果的数量
+    //skip 
+    //=> 传入数字,用来跳过前x个结果,可以用来做翻页器
+    //limit
+    //=> 传入数字,用来限制返回结果数量,默认条件下返回50个结果,最多不超过1000
+    //asc/desc
+    //=> 传入字段名称,用来返回结果时根据字段排序(简单的排序)
+    //=> v0.1中只允许一层排序好啦
+
+    //TODO 如果是多条件查询的话该如何规定limit呢?
+    //================   query body  ==============================
+    //规定所有query规则后查询的步骤
+    //find/first
+    //=> 如果是find则返回搜索体,如果是first则为只查询第一条
+    //=============================================================
     var res = Init_db(db_name)
     var limit = 50
     var skip = 0
@@ -157,7 +184,7 @@ function Query_db(db_name) {
                         }
                     })
                     break
-                case "contained_in":
+                case "not_contained_in":
                     res = res.filter(function(re) {
                         if (re[query_obj.key_] && !re[query_obj.key_] in query_obj.value_) {
                             return re
